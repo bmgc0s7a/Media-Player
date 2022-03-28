@@ -13,10 +13,12 @@ const audios = [
     }
 ];
 
-let index = 0;
+let index = 0, isActive = false;
 const songName = document.querySelector("#song-name");
 const artistName = document.querySelector("#artist-name");
 const linkAudio = document.querySelector("#link-audio");
+const btnPause = document.querySelector("#btnPause");
+const btnPlay = document.querySelector("#btnPlay");
 selectSong();
 
 function selectSong(){
@@ -27,7 +29,8 @@ function selectSong(){
 }
 
 function play(){
-	linkAudio.play();
+    if(!isActive) {linkAudio.play(); isActive = true; btnPlay.classList.add("hidden"); btnPause.classList.remove("hidden")}
+	else {linkAudio.pause(); isActive = false; btnPlay.classList.remove("hidden"); btnPause.classList.add("hidden")}
 }
 function back(){
 	if(index > 0){ index--; }
