@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spinner</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="player">
+        <div id="discImg"></div>
+        <div id="controls">
+            <div class="title">
+                <div>
+                    <h1 id="song-name" class="rest-p-m-0">song-name</h1>
+                    <h3 id="artist-name" class="rest-p-m-0 font-300 fs-3">artist-name</h3>                   
+                </div>
+                <button class="single-button" onclick="mute()" id="btnSoundOn">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <button class="single-button hidden" onclick="soundOn()" id="btnMute">
+                    <i class="fa-solid fa-volume-xmark"></i>
+                </button>
+            </div>
+            <div id="progressBarBack"></div>
+            <div id="progressBar"></div>
+            <div class="buttons">
+                <button onclick="back()" class="single-button">
+                    <i class="fa-solid fa-backward"></i>
+                </button>
+                <button onclick="play()" class="single-button" id="btnPlay">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <button onclick="play()" class="single-button hidden"  id="btnPause">
+                    <i class="fa-solid fa-pause"></i>
+                </button>
+                <button onclick="forward()" class="single-button">
+                    <i class="fa-solid fa-forward"></i>
+                </button>
+            </div>
+            <audio id="link-audio" src=""></audio>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
