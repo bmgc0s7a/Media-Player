@@ -25,6 +25,8 @@ const artistName = document.querySelector("#artist-name");
 const linkAudio = document.querySelector("#link-audio");
 const btnPause = document.querySelector("#btnPause");
 const btnPlay = document.querySelector("#btnPlay");
+const btnMute = document.querySelector("#btnMute");
+const btnSoundOn = document.querySelector("#btnSoundOn");
 const progressBar = document.querySelector("#progressBar");
 selectSong();
 loop();
@@ -66,4 +68,16 @@ function forward(){
 	if(index < audios.length-1){ index++; }
     selectSong();
     linkAudio.play();
+}
+
+function mute() {
+    linkAudio.muted = true;
+    btnMute.classList.remove("hidden");
+    btnSoundOn.classList.add("hidden");
+}
+
+function soundOn() {
+    linkAudio.muted = false;
+    btnMute.classList.add("hidden");
+    btnSoundOn.classList.remove("hidden");
 }

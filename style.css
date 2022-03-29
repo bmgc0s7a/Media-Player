@@ -77,9 +77,6 @@ select {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 
-.hidden{
-  display: none;
-}
 
 body{
     display: flex;
@@ -176,4 +173,25 @@ body{
 .single-button{
     border: none;
     background-color: white;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+}
+
+.single-button:hover {
+    background-color: rgb(221, 221, 221);
+    border-radius: 50%;
+    border: 1px solid;
+    box-shadow: 1px 1px 2px 1px gray inset;
+}
+
+
+
+
+
+
+.hidden{
+  display: none;
 }

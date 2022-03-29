@@ -23,8 +23,11 @@
                     <h1 id="song-name" class="rest-p-m-0">song-name</h1>
                     <h3 id="artist-name" class="rest-p-m-0 font-300 fs-3">artist-name</h3>                   
                 </div>
-                <button class="single-button">
-                    <i class="fa-solid fa-headphones"></i>
+                <button class="single-button" onclick="mute()" id="btnSoundOn">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <button class="single-button hidden" onclick="soundOn()" id="btnMute">
+                    <i class="fa-solid fa-volume-xmark"></i>
                 </button>
             </div>
             <div id="progressBarBack"></div>
