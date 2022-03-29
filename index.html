@@ -33,7 +33,7 @@
             <div id="progressBarBack"></div>
             <div id="progressBar"></div>
             <div class="buttons">
-                <button onclick="back()" class="single-button">
+                <button onclick="back()" class="single-button" id="btnBack">
                     <i class="fa-solid fa-backward"></i>
                 </button>
                 <button onclick="play()" class="single-button" id="btnPlay">
@@ -42,7 +42,10 @@
                 <button onclick="play()" class="single-button hidden"  id="btnPause">
                     <i class="fa-solid fa-pause"></i>
                 </button>
-                <button onclick="forward()" class="single-button">
+                <button onclick="replay()" class="single-button hidden" id="btnReplay">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+                <button onclick="forward()" class="single-button" id="btnForward">
                     <i class="fa-solid fa-forward"></i>
                 </button>
             </div>
