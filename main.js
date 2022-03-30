@@ -3,18 +3,21 @@ const audios = [ //array with songs' data
         name: "Cat Vibing",
         artist: "Ievan Polkka",
         duration: 22,
+        img: "https://i.ytimg.com/vi/NUYvbT6vTPs/maxresdefault.jpg",
         uri: "audio/cat_vibing.mp3"
     },
     {
         name: "Creative Minds",
         artist: "Benjamin Tissot",
         duration: 147,
+        img: "https://www.bensound.com/bensound-img/creativeminds.jpg",
         uri: "https://www.bensound.com/bensound-music/bensound-creativeminds.mp3"
     },
     {
         name: "A New Beginning",
         artist: "Bensound",
         duration: 154,
+        img: "https://i1.sndcdn.com/artworks-000577426286-6p1jsj-t500x500.jpg",
         uri: "https://www.bensound.com/bensound-music/bensound-anewbeginning.mp3"
     }
 ];
@@ -29,6 +32,8 @@ const btnReplay = document.querySelector("#btnReplay");
 const btnMute = document.querySelector("#btnMute");
 const btnSoundOn = document.querySelector("#btnSoundOn");
 const progressBar = document.querySelector("#progressBar");
+const diskimg = document.querySelector('#discImg');
+
 //calling methods at start
 selectSong();
 loop();
@@ -44,6 +49,7 @@ function selectSong(){
     songName.textContent = audios[index].name;
     artistName.textContent = audios[index].artist;
     linkAudio.src = audios[index].uri;
+    if(audios[index].img) diskimg.style.backgroundImage = `url(${audios[index].img})`;
     linkAudio.load();
 }
     //functions to show / hide buttons
@@ -51,6 +57,7 @@ function btnReplayShowing(){
     btnPlay.classList.add("hidden"); 
     btnPause.classList.add("hidden"); 
     btnReplay.classList.remove("hidden");
+    diskimg.classList.remove("animation-rotate");
 }
 function btnPlayShowing(){
     btnPlay.classList.remove("hidden"); 
@@ -76,10 +83,14 @@ function play(){
         linkAudio.play(); 
         isAudioActive = true; 
         btnPauseShowing();
+        diskimg.classList.add("animation-rotate");
+        if(diskimg.classList.contains('animation-rotate-pause')) diskimg.classList.remove('animation-rotate-pause');
     }
-	else {linkAudio.pause(); 
+	else {
+        linkAudio.pause(); 
         isAudioActive = false; 
         btnPlayShowing();
+        diskimg.classList.add("animation-rotate-pause");
     }
 }
 function back(){
@@ -122,6 +133,7 @@ function soundOn() {
 function replay(){
     index = 0; 
     selectSong(); 
+    diskimg.classList.add("animation-rotate");
     linkAudio.play(); 
     isAudioActive = true;
     isReplayActive = false;

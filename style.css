@@ -77,6 +77,14 @@ select {
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
 
+@keyframes rotate{
+  to{
+    transform: rotate(360deg);
+  }
+  from{
+    transform: rotate(0deg);
+  }
+}
 
 body{
     display: flex;
@@ -97,13 +105,15 @@ body{
     border-radius: 50%;
     box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.2);
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
 }
 #discImg:after{
     content: '';
     background: #fff;
     position: absolute;
-    top: 47%;
-    left: 47%;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -190,4 +200,15 @@ body{
 /*selectors to have priority*/
 .hidden{
   display: none;
+}
+
+.animation-rotate {
+  animation-name: rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration:5s;
+}
+
+.animation-rotate-pause{
+  animation-play-state: paused;
 }
